@@ -69,3 +69,5 @@ h1,h2{font-weight:900}
 .footer a{text-decoration:none}
 @media(min-width:1000px){.hero .container{display:grid;grid-template-columns:1fr 1.05fr;gap:50px;align-items:center}.devices{margin-top:0;height:460px}.devices .lap{width:92%}.devices .phone{width:30%;left:-2%;bottom:-10px}.hero h1{font-size:clamp(2.6rem,5vw,4.6rem)}}
 .mail-float{background:#5b3df5;box-shadow:0 12px 30px -6px rgba(91,61,245,.6)}.mail-float::before{background:#5b3df5}.mail-float svg{width:28px;height:28px}.cta .mail-form{max-width:640px;margin:34px auto 0;text-align:right;background:rgba(255,255,255,.1);padding:24px;border-radius:22px;border:1px solid rgba(255,255,255,.2)}.cta .mail-form .field input,.cta .mail-form .field select,.cta .mail-form .field textarea{border-color:transparent;color:#14112b}.cta .form-note,.cta .form-note a{color:#efe9ff}.cta .form-ok{color:#fff}
+@media(min-width:950px){.demos{grid-template-columns:repeat(2,1fr)}.plans{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1200px){.plans{grid-template-columns:repeat(4,1fr)}}
