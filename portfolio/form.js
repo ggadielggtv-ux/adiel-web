@@ -22,12 +22,12 @@
     var data=new FormData(f); btn.disabled=true; btn.textContent='שולח…';
     // Backends tried in order; on network error / 5xx / rejection the next one is tried.
     // To enable Web3Forms: put the access key (from web3forms.com, tied to aronagever49@gmail.com) below.
-    var W3F_KEY='';
+    var W3F_KEY='e3067cc6-c3c9-494d-b83c-6b32344aafd6';
     var backends=[
       {url:'https://formsubmit.co/ajax/aronagever49@gmail.com',body:function(){return data},
        ok:function(r,j){return r.ok&&(String(j.success)==='true'||/activat/i.test(String(j.message||'')))}}
     ];
-    if(W3F_KEY) backends.push({url:'https://api.web3forms.com/submit',body:function(){var d=new FormData();data.forEach(function(v,k){if(k.charAt(0)!=='_')d.append(k,v)});d.append('access_key',W3F_KEY);d.append('subject','פנייה חדשה מהאתר של Koraveo');d.append('from_name','Koraveo');return d},
+    if(W3F_KEY) backends.unshift({url:'https://api.web3forms.com/submit',body:function(){var d=new FormData();data.forEach(function(v,k){if(k.charAt(0)!=='_')d.append(k,v)});d.append('access_key',W3F_KEY);d.append('subject','פנייה חדשה מהאתר של Koraveo');d.append('from_name','Koraveo');return d},
        ok:function(r,j){return r.ok&&j.success===true}});
     function attempt(i){
       if(i>=backends.length) return Promise.reject(new Error('all failed'));
