@@ -89,3 +89,17 @@ h1,h2,h3{font-weight:900}
 .hero h1{font-size:clamp(3.6rem,13vw,7rem)}
 @media(max-width:949px){.hero{isolation:isolate}.hero-photo{position:absolute;inset:0;width:100%;max-width:none;max-height:none;border-radius:0;aspect-ratio:auto;z-index:-1;opacity:.5}.hero-photo img{object-position:30% top}.hero-photo::after{background:linear-gradient(90deg,rgba(11,12,13,.2),rgba(11,12,13,.75) 70%),linear-gradient(0deg,#0b0c0d 5%,transparent 50%)}.hero-photo .tag{display:none}}
 @media(max-width:949px){.hero .lead{color:#e4e6e1;text-shadow:0 1px 12px #000}.hero-photo{opacity:.42}}
+
+/* Koraveo demo badge */
+.kv-badge{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:58;display:inline-flex;align-items:center;gap:8px;padding:8px 14px 8px 12px;border-radius:999px;background:rgba(14,19,36,.92);color:#F6F2EA;font:500 13px/1.2 Heebo,Assistant,sans-serif;text-decoration:none;box-shadow:0 10px 26px -10px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.12);white-space:nowrap;backdrop-filter:blur(6px)}
+.kv-badge b{font-family:Manrope,Heebo,sans-serif;font-weight:800;letter-spacing:.04em}
+.kv-badge svg{width:18px;height:18px;flex:none}
+.kv-badge:hover{background:#0E1324}
+.kv-badge:focus-visible{outline:3px solid #C9A45C;outline-offset:3px}
+@media(max-width:380px){.kv-badge{font-size:12px;padding:7px 11px}}
+
+:where(img){height:auto}
+
+.ic{display:inline-block;vertical-align:-.2em;flex:none}
+.fc-ic{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:color-mix(in srgb,var(--accent) 14%,#fff);color:var(--accent-ink,var(--accent))}
+.ci{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent-ink,var(--accent));flex:none}

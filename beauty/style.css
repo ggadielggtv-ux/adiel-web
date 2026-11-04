@@ -116,3 +116,17 @@
 .gallery .g4{background:var(--ink);place-items:center;color:#f3e3da;text-align:center;padding:24px}
 @media(min-width:800px){.gallery .g4{display:grid}}
 .trust b{direction:ltr;unicode-bidi:isolate;text-align:right}
+
+/* Koraveo demo badge */
+.kv-badge{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:58;display:inline-flex;align-items:center;gap:8px;padding:8px 14px 8px 12px;border-radius:999px;background:rgba(14,19,36,.92);color:#F6F2EA;font:500 13px/1.2 Heebo,Assistant,sans-serif;text-decoration:none;box-shadow:0 10px 26px -10px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.12);white-space:nowrap;backdrop-filter:blur(6px)}
+.kv-badge b{font-family:Manrope,Heebo,sans-serif;font-weight:800;letter-spacing:.04em}
+.kv-badge svg{width:18px;height:18px;flex:none}
+.kv-badge:hover{background:#0E1324}
+.kv-badge:focus-visible{outline:3px solid #C9A45C;outline-offset:3px}
+@media(max-width:380px){.kv-badge{font-size:12px;padding:7px 11px}}
+
+:where(img){height:auto}
+
+.ic{display:inline-block;vertical-align:-.2em;flex:none}
+.fc-ic{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:color-mix(in srgb,var(--accent) 14%,#fff);color:var(--accent-ink,var(--accent))}
+.ci{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent-ink,var(--accent));flex:none}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ggadielggtv-ux.github.io/adiel-web/sitemap.xml
