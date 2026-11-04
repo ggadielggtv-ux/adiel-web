@@ -20,12 +20,24 @@
     if(!email.value.trim()||!email.checkValidity()){email.setAttribute('aria-invalid','true');email.focus();return say('נא למלא כתובת אימייל תקינה, כדי שאוכל לחזור אליכם.',false)}
     if(f.querySelector('.hp').value) return;
     var data=new FormData(f); btn.disabled=true; btn.textContent='שולח…';
-    fetch('https://formsubmit.co/ajax/aronagever49@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:data})
-      .then(function(r){return r.json().catch(function(){return {}}).then(function(j){return {ok:r.ok,j:j}})})
-      .then(function(res){
-        if(res.ok&&String(res.j.success)==='true'){f.reset();say('תודה! הפנייה התקבלה, ואחזור אליכם למייל בהקדם.',true);btn.textContent='נשלח ✓';return}
-        throw new Error('fail');
-      })
+    // Backends tried in order; on network error / 5xx / rejection the next one is tried.
+    // To enable Web3Forms: put the access key (from web3forms.com, tied to aronagever49@gmail.com) below.
+    var W3F_KEY='';
+    var backends=[
+      {url:'https://formsubmit.co/ajax/aronagever49@gmail.com',body:function(){return data},
+       ok:function(r,j){return r.ok&&(String(j.success)==='true'||/activat/i.test(String(j.message||'')))}}
+    ];
+    if(W3F_KEY) backends.push({url:'https://api.web3forms.com/submit',body:function(){var d=new FormData();data.forEach(function(v,k){if(k.charAt(0)!=='_')d.append(k,v)});d.append('access_key',W3F_KEY);d.append('subject','פנייה חדשה מהאתר של Koraveo');d.append('from_name','Koraveo');return d},
+       ok:function(r,j){return r.ok&&j.success===true}});
+    function attempt(i){
+      if(i>=backends.length) return Promise.reject(new Error('all failed'));
+      var b=backends[i];
+      return fetch(b.url,{method:'POST',headers:{'Accept':'application/json'},body:b.body()})
+        .then(function(r){return r.json().catch(function(){return {}}).then(function(j){if(b.ok(r,j))return true;throw new Error('fail')})})
+        .catch(function(){return attempt(i+1)});
+    }
+    attempt(0)
+      .then(function(){f.reset();say('תודה! הפנייה התקבלה, ואחזור אליכם למייל בהקדם.',true);btn.textContent='נשלח ✓'})
       .catch(function(){
         btn.disabled=false;btn.textContent='שליחת הפנייה';
         msg.innerHTML='';var a=document.createElement('a');a.href=mailto(data);a.textContent='לשליחה דרך תוכנת המייל';
