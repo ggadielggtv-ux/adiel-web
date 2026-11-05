@@ -59,3 +59,12 @@ All photos are free-licence stock (Unsplash License / Pexels License), downloade
 | galil-stay | vid/v-suite | https://www.pexels.com/video/6236410/ | Anastasia Shuraeva | Pexels License |
 | tzfat-gallery | vid/v-brush | https://www.pexels.com/video/8170112/ | ArtHouse Studio | Pexels License |
 | tzfat-gallery | vid/v-paint | https://www.pexels.com/video/8348031/ | ROMAN ODINTSOV | Pexels License |
+
+## Fast Connection preview (2026-11-05) – client site, not part of the Koraveo portfolio
+| Site | File | Source | Author | Licence |
+|---|---|---|---|---|
+| fastconnection | img/hero | https://www.pexels.com/photo/14280310/ | Hieu Nguyen | Pexels License |
+| fastconnection | img/investors | https://www.pexels.com/photo/3906592/ | Leandro Alamino | Pexels License |
+| fastconnection | img/markets | https://www.pexels.com/photo/13409734/ | Engin Akyurt | Pexels License |
+| fastconnection | img/bridge | https://www.pexels.com/photo/32894132/ | Cencial | Pexels License |
+| fastconnection | vid/city | https://www.pexels.com/video/14285131/ | Pexels contributor | Pexels License |
