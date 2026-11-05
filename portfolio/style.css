@@ -195,3 +195,12 @@ h1,h2,h3{font-weight:800;letter-spacing:-.015em}
 body.a11y-contrast .hero,body.a11y-contrast .contact-sec,body.a11y-contrast .plan-main{background:#000!important}
 
 :where(img){height:auto}
+
+/* service areas (Galilee) */
+.areas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.areas li{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 22px 24px;display:grid;gap:6px}
+.areas b{font-size:1.2rem;color:var(--ink);display:flex;align-items:center;gap:10px}
+.areas b::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--gold);flex:none}
+.areas span{color:var(--muted);line-height:1.6}
+@media(max-width:900px){.areas{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.areas{grid-template-columns:1fr}}
